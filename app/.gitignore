@@ -1,0 +1,25 @@
+# Built application files
+/build/
+**/build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Gradle files
+.gradle/
+**/build/
+*.iml
+.idea/
+*.log
+
+# Keystore files (never commit these)
+*.jks
+*.keystore
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Signing configs (if any)
+*.key
+*.pem

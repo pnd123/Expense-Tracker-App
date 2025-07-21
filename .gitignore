@@ -1,0 +1,29 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Android/Java build and secret files
+*.apk
+*.ap_
+*.log
+*.jks
+*.keystore
+/test-results/
+
+# VS Code support
+.vscode/
+
+# Windows/Mac temp files
+Thumbs.db
+*.DS_Store
