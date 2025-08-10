@@ -94,11 +94,16 @@ cd backend/
 ```
 
 ---
-📸 Screenshots
+## 📱 Home Screen
+
+<h2 align="center">📱 Home Screen</h2>
+<p align="center">
+  <img src="docs/images/app.png" width="300" alt="Home Screen">
+</p>
 
 ---
 
 👤 Author
 Prasann
 🚀 Passionate Android + Java Developer
-🔗 GitHub: github.com/yourusername
+🔗 GitHub: https://github.com/pnd123
