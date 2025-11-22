@@ -1,9 +1,6 @@
 # Expenzo – Personal Expense Tracker App (Android + Spring Boot)
 
 **Expenzo** is a full-featured, privacy-focused **daily expense tracking app** built using **Java (Android)** and a **Spring Boot backend**. It helps users seamlessly manage their finances with offline capabilities, insightful charts, and secure data sync.
-
-> Built with simplicity and performance in mind — perfect for college students, individuals, or anyone who wants clear control over spending.
-
 ---
 
 ## ✨ Features
@@ -41,7 +38,6 @@
 - **MySQL 8.0**
 - **REST API** with JSON responses
 - Date format handling with `@JsonFormat`
-- `.gitignore` and `application.properties` protected for safe GitHub upload
 
 ---
 
@@ -52,32 +48,66 @@
 - Supports local offline usage and secure API-based backend sync
 - Backend uses `@Temporal` and strict date validation to avoid format conflicts
 
+### 🔗 Backend (Spring Boot + MySQL)
+
+The backend is a fully functional **Java Spring Boot application** that handles all expense operations and integrates directly with **MySQL** using Spring Data JPA + Hibernate.
+
+#### ✔ Backend Features
+
+* Secure REST API for CRUD operations
+* Connected to **MySQL database** using JDBC
+* Hibernate auto-generates tables via JPA entities
+* JSON responses using Jackson (`@JsonFormat` for dates)
+* Follows **Controller → Service → Repository → Model** structure
+* Used by the Android app via Retrofit
+
 ---
 
-## 📂 Folder Structure
+## 🗄️ **MySQL Database Integration (Hands-On SQL Work)**
+
+This project demonstrates real SQL usage through:
+
+* Creating MySQL database (`expense_tracker`)
+* Creating and managing tables using JPA + SQL
+* Running SQL queries through both MySQL Workbench and Spring Boot
+* Viewing SQL logs (`spring.jpa.show-sql=true`)
+
+### **application.properties**
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/expense_tracker
+spring.datasource.username=root
+spring.datasource.password=****
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+```
+---
+
+## 📂 Backend Folder Structure (Java + SQL Proof)
+
+```
+src/main/java/com/example/expensetracker/
+│
+├── model/
+│   └── Expense.java     → Maps to MySQL table
+│
+├── repository/
+│   └── ExpenseRepository.java  → SQL operations via JPA
+│
+└── controller/
+    └── ExpenseController.java  → REST API
+
+```
+### ▶ Run the Backend
 
 ```bash
-Expenzo/
-│
-├── backend/             # Spring Boot backend (MySQL)
-│   ├── src/
-│   ├── pom.xml
-│   └── application.properties (ignored)
-│
-├── app/                 # Android Studio project
-│   ├── app/src/
-│   └── build.gradle
-│
-├── .gitignore           # Root-level ignore file
-└── README.md
+cd backend/
+./mvnw spring-boot:run
 ```
 
----
-🚀 Getting Started
-Clone the Repo
-```
-git clone https://github.com/yourusername/Expenzo.git
-```
 ---
 📲 Run the Android App
 Open the project in Android Studio
